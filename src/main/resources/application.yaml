@@ -1,0 +1,47 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:postgresql://ec2-46-137-0-50.eu-west-1.compute.amazonaws.com:5432/d7ggqqf3nrnd5h
+    password: 088e9fc943aab02ca5f55b4612b743a0714af58f4a45d82ec2f4a88c8b26ae17
+    username: nylwsirzlcqkmb
+    driver-class-name: org.postgresql.Driver
+  # For colored logging <3
+  output:
+    ansi:
+      enabled: always
+  sql:
+    init:
+      mode: always
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger
+    operations-sorter: method
+  show-actuator: true
+
+management:
+  server:
+    port: 9090
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
