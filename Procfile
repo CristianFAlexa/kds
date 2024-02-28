@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar app.jar
+web: java -jar -Dserver.port=$PORT build/libs/kds-0.0.1.jar
